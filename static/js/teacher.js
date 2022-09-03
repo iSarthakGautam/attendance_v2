@@ -61,7 +61,7 @@ function pin_dialouge(message){
 Swal.fire({
   title: x_pin,
   html: 'Automatic Close after <b></b> Sec.<br> Do not interfere.',
-  timer: 5000,   // replace it for 5 min
+  timer: 300000,   // replace it for 5 min
   timerProgressBar: true,
   didOpen: () => {
     Swal.showLoading()
