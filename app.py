@@ -412,5 +412,5 @@ api.add_resource(performance_generator, "/api/performance_generator/")
 api.add_resource(attendance_downloader, "/api/attendance_downloader/<subject>")
 
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
