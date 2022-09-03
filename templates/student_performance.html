@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+
+    
+
+</head>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <section class="top-nav">
+
+    <div id="header_text">
+      Attendance
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+  
+    <ul class="menu">
+      <li onclick=redirect_to_student() cursor: pointer;>Home</li>
+      <li onclick="console.log('Roll')" cursor: pointer;>Change Roll Number</li>
+      <li onclick=redirect_to_problem() cursor: pointer;>Report a problem</li>
+     
+    </ul>
+  </section>
+<div id="center_div" style="text-align: center;">
+<div id="student_info">
+</div>
+
+</div>
+
+
+    <table id="decks">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Attendance percentage</th>
+    
+            </tr>
+        </thead>
+        <tbody>
+          {% for d in data_list %}
+            <tr>
+                <td>{{d[0]}}</td>
+                <td>{{d[1]}}%</td>
+            </tr>
+          {% endfor %}  
+        </tbody>
+    </table>    
+
+<div style="text-align: center;">
+  <br><br>
+<button id="button_grey" onclick=redirect_to_student()>Home</button>
+</div>
+</body>
+
+
+<script src="../static/js/performance.js"></script>
+
+</html>

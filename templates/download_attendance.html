@@ -1,0 +1,71 @@
+<!---To be Elements to be taken as component rather than wholefile as Component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <script src="https://unpkg.com/vue@3"></script>
+<script src="https://unpkg.com/vue-router@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.min.css" integrity="sha512-cyIcYOviYhF0bHIhzXWJQ/7xnaBuIIOecYoPZBgJHQKFPo+TOBA+BY1EnTpmM8yKDU4ZdI3UGccNGCEUdfbBqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.all.min.js" integrity="sha512-IZ95TbsPTDl3eT5GwqTJH/14xZ2feLEGJRbII6bRKtE/HC6x3N4cHye7yyikadgAsuiddCY2+6gMntpVHL1gHw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+
+</head>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <section class="top-nav">
+
+    <div id="header_text">
+      Teacher
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <li onclick=redirect_to_teacher() cursor: pointer;>Home</li>
+      <li onclick=redirect_to_problem() cursor: pointer;>Report a problem</li>
+     
+    </ul>
+  </section>
+<br>
+  <div style="margin-left:40%;">
+  <form action="/get_attendance" method="POST" id="create-form">
+    <label for="date">Choose a date:<br></label>
+    <div class="wrapper">
+    <select id="req_date" name="date">
+      {% for date in date_data_list %}
+      <option value={{date}}>{{date}}</option>
+      {% endfor %}  
+    </select>
+ 
+    <br>
+    <br>
+  
+    <label for="date">Choose a Subject:<br></label>
+    <br>
+    <select id="req_subject" name="subj">
+      {% for sub in sub_data_list %}
+      <option value={{sub}}>{{sub}}</option>
+      {% endfor %}  
+      
+    </select>
+    <br><br>
+    <input type="submit">
+    </div>
+
+  </form>
+</div>
+
+
+
+</body>
+
+<script src="../static/js/download.js"></script>
+
+</html>
