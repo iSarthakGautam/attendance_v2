@@ -134,7 +134,7 @@ def performance(roll):
                 if (k.roll_no==roll) and (k.subject==j.subject_name) :
                     att_count+=1
             x=j.subject_name
-            y=(att_count/90)*100
+            y=(att_count/90)*100. ## Updated Formula
             
             format_float = "{:.2f}".format(y)
             l=[x,format_float]
